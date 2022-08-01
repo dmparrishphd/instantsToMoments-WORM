@@ -1,0 +1,78 @@
+DESCRIPTION-Section:
+                ------------------------------------------------
+                DESCRIPTION
+                ------------------------------------------------
+Package:
+                o01403471053410551112371000072730243207672250
+Type:
+                Package
+Title:
+                Estimate intervals associated with distinct
+                points.
+Version:
+                2022.8-01
+Date:
+                2022-08-01
+Author:
+                D. Michael Parrish [aut]
+Maintainer:
+                Neat O <neatoverse@yahoo.com>
+Description: 
+                The instantsToMoments functions was originaly
+                developed with the the plotting of irregularly
+                spaced timed data points as a raster whose cells
+                vary in width.
+                    This file is
+                URN:UUID:6073915c-22d2-4a7c-8007-5d851a1f74a8#
+                DESCRIPTION
+License:
+                AGPL-3
+Encoding:
+                UTF-8
+INSTALL-Section:
+                ------------------------------------------------
+                INSTALL
+                ------------------------------------------------
+                To install this non-standard package, copy the
+                files, including the containing subdirectory, to
+                a known directory. The subdirectoy should be
+                named
+                o01403471053410551112371000072730243207672250
+                to be consistent with the package design.
+HELP-Section:
+                ------------------------------------------------
+                HELP
+                ------------------------------------------------
+Usage:
+                instantsToMoments.R <- paste0 (
+                    # insert path to directory
+                    "/o01403471053410551112371000072730243207672250",
+                    "/instantsToMoments.R" )
+                instantsToMoments <- source ( instantsToMoments.R ) [[ 1 ]]
+                instantsToMoments(x)
+Arguments:
+                x:      a numeric vector of strictly increasing,
+                        finite values.
+Value:
+                A numeric vector of length one more than x. Each
+                successive pair of values gives an estimate for
+                the interval around the corresponding element of x.
+Examples:
+                instantsToMoments.R <- paste0 (
+                    # insert path to directory
+                    "/o01403471053410551112371000072730243207672250",
+                    "/instantsToMoments.R" )
+                instantsToMoments <- source ( instantsToMoments.R ) [[ 1 ]]
+                x <- c(1, 2, 3, 5, 8)
+                m <- instantsToMoments(x)
+                plot(m, rep(0, length(m)), col = "red",
+                    ylab = "" , yaxt = "n" ,
+                    xlab = "x",
+                    col.sub = "red" ,
+                    sub = "Red circles estimate interval boundaries.")
+                y <- rep(0, length(x))
+                points(x, y, pch = 16)
+                text(x, y, labels = x, pos = 3 )
+                text(x, y,
+                    labels = paste0("x[[", seq_along(x), "]]"),
+                    pos = 1 )
