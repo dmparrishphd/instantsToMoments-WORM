@@ -1,2 +1,1 @@
-# instantsToMoments-WORM
-Estimate intervals associated with distinct points
+[README](https://github.com/dmparrishphd/instantsToMoments-CORW#readme).
